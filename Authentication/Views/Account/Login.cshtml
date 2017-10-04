@@ -1,0 +1,35 @@
+﻿@using Authentication.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="container">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", role = "form" }))
+            {
+
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="text" id="inputEmail" name="Email" class="form-control inputField" placeholder="username" required autofocus>
+            <input type="password" id="inputPassword" name="Password" class="form-control" placeholder="password" required>
+            <div id="remember" class="checkbox">
+                <br />
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+
+        }
+        <p>
+            @Html.ActionLink("Create account", "Register")
+        </p>
+    </div><!-- /card-container -->
+</div><!-- /container -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

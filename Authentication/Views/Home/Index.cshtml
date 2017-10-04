@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<div class="container" id="containerID">
+    <div class="card card-container" id="cardID">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        @* <p id="profile-name" class="profile-name-card"></p>*@
+
+        @*@using (Html.BeginForm("AddUserInfo", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", role = "form" }))
+            {*@
+        <form id="regForm" action="/Home/AddUserInfo" method="post" class="form-signin" role="form" onsubmit="return validate();">
+
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="text" name="Name" class="form-control inputField" placeholder="Full Name" required autofocus>
+            <input type="text" name="Address" class="form-control inputField" placeholder="Address" required>
+
+            <br />
+
+            <button id="save" class="btn btn-lg btn-primary btn-block btn-signin" type="button">Save</button>
+        </form>
+        <label id="usName"></label>
+        <button id="LogOff" class="btn btn-lg btn-primary btn-block btn-signin" type="button">Log Out</button>
+        @*}*@
+    </div><!-- /card-container -->
+
+</div><!-- /container -->
+
+<script>
+
+    var bt = document.getElementById('save');
+    var lg = document.getElementById('LogOff');
+    lg.onclick = function () {
+        $.ajax({
+            type: "POST",
+            url: '/Home/LogOut',
+            data: '',
+            success: function (response) {
+                location.reload();
+            }
+        });
+
+    }
+
+    bt.onclick = function () {
+        $.ajax({
+            type: "POST",
+            url: '/Home/AddUserInfo',
+            data: $("#regForm").serialize(),
+            success: function (response) {
+                //success message mybe...
+                document.getElementById('regForm').remove();;
+                document.getElementById('usName').innerText = response;
+            }
+        });
+    }
+
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

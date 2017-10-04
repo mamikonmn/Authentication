@@ -1,0 +1,54 @@
+﻿@model Authentication.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+
+        @*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", id = "regForm" ,role = "form" }))
+        {*@
+        <form id="regForm" action="/Account/Register" method="post" class="form-signin" role = "form" onsubmit="return validate();">
+
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="text" id="inputEmail" name="Email" class="form-control inputField" placeholder="username" required autofocus>
+
+            <input type="password" id="inputPassword" name="Password" class="form-control inputField" placeholder="password" required>
+            <input type="password" id="confirm_password" name="ConfirmPassword" class="form-control inputField" placeholder="confirm password" required>
+     
+            <br />
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Sign in</button>
+        </form>
+
+        @*}*@
+        <p>
+            @Html.ActionLink("Login", "Login")
+        </p>
+    </div><!-- /card-container -->
+</div><!-- /container -->
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    var password = document.getElementById("inputPassword")
+      , confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>

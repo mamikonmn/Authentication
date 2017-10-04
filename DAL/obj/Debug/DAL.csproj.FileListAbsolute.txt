@@ -1,0 +1,14 @@
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\DAL.dll.config
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\DAL.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\DAL.pdb
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\obj\Debug\DAL.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\DAL\obj\Debug\DAL.pdb
+C:\Users\Nemo\Desktop\New folder (2)\DAL\bin\Debug\DAL.dll.config
+C:\Users\Nemo\Desktop\New folder (2)\DAL\bin\Debug\DAL.dll
+C:\Users\Nemo\Desktop\New folder (2)\DAL\bin\Debug\DAL.pdb
+C:\Users\Nemo\Desktop\New folder (2)\DAL\obj\Debug\DAL.dll
+C:\Users\Nemo\Desktop\New folder (2)\DAL\obj\Debug\DAL.pdb

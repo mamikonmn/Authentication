@@ -1,0 +1,19 @@
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\Core.dll.config
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\Core.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\Core.pdb
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\DAL.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\EntityFramework.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\DAL.pdb
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\bin\Debug\EntityFramework.xml
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\obj\Debug\Core.dll
+C:\Users\Nemo\Desktop\Authentication\Authentication\Core\obj\Debug\Core.pdb
+C:\Users\Nemo\Desktop\New folder (2)\Core\bin\Debug\Core.dll.config
+C:\Users\Nemo\Desktop\New folder (2)\Core\bin\Debug\Core.dll
+C:\Users\Nemo\Desktop\New folder (2)\Core\bin\Debug\Core.pdb
+C:\Users\Nemo\Desktop\New folder (2)\Core\bin\Debug\DAL.dll
+C:\Users\Nemo\Desktop\New folder (2)\Core\bin\Debug\EntityFramework.dll
+C:\Users\Nemo\Desktop\New folder (2)\Core\bin\Debug\DAL.pdb
+C:\Users\Nemo\Desktop\New folder (2)\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Nemo\Desktop\New folder (2)\Core\obj\Debug\Core.dll
+C:\Users\Nemo\Desktop\New folder (2)\Core\obj\Debug\Core.pdb

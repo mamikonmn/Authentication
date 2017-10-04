@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterviewDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="InterviewDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="User" EntityType="InterviewDBModel.User" />
+    <EntitySet Name="User_Info" EntityType="InterviewDBModel.User_Info" />
+    <AssociationSet Name="FK_User_Info_User" Association="InterviewDBModel.FK_User_Info_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Info" Relationship="InterviewDBModel.FK_User_Info_User" FromRole="User" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="register_date" Type="DateTime" Precision="0" />
+    <Property Name="confirmed" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="InterviewDBModel.FK_User_Info_User" FromRole="User_Info" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_User_Info_User">
+    <End Type="InterviewDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="InterviewDBModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

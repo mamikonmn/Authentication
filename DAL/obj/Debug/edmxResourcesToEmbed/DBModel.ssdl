@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterviewDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="address" Type="nvarchar" MaxLength="250" />
+    <Property Name="register_date" Type="date" />
+    <Property Name="confirmed" Type="bit" />
+  </EntityType>
+  <Association Name="FK_User_Info_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InterviewDBModelStoreContainer">
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Info" EntityType="Self.User_Info" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_User_Info_User" Association="Self.FK_User_Info_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
